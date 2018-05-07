@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -14,7 +15,7 @@ namespace ComputerManager
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -22,7 +23,11 @@ namespace ComputerManager
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            var mvc = services.AddMvc();
+
+            var corePlugin = new CorePlugin();
+            mvc.ConfigureApplicationPartManager(apm => apm.ApplicationParts.Add(corePlugin.AssemblyPart));
+            corePlugin.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
