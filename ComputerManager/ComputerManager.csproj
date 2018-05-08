@@ -21,6 +21,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\services\abstractions\IDiskInfoService.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\services\abstractions\IDiskInfoService.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ComputerManager.Core\ComputerManager.Core.csproj" />
   </ItemGroup>
 

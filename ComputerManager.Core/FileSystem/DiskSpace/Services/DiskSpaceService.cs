@@ -17,7 +17,7 @@ namespace ComputerManager.FileSystem.DiskSpace.Services
                 .Select(d => new DiskSpaceResult
                 {
                     Available = d.TotalFreeSpace,
-                    FileSystem = d.VolumeLabel,
+                    Name = d.VolumeLabel,
                     MountPoint = d.Name,
                     Size = d.TotalSize,
                     Used = d.TotalSize - d.TotalFreeSpace

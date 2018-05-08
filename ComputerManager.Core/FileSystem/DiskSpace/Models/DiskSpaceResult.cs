@@ -8,7 +8,7 @@ namespace ComputerManager.FileSystem.DiskSpace.Models
 {
     public class DiskSpaceResult
     {
-        public string FileSystem { get; set; }
+        public string Name { get; set; }
         public long Size { get; set; }
         public long Used { get; set; }
         public long Available { get; set; }
