@@ -52,7 +52,7 @@
     "jquery": "^3.4.0",
     "json-loader": "^0.5.4",
     "mocha": "^4.1.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.2",
     "office-ui-fabric-react": "^5.94.0",
     "react": "^16.3.2",
